@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">CruiseManagerApp</string>
+    <string name="no_active_cruises">Brak aktywnych rejsów</string>
+    <string name="add_cruise_hint">Dodaj rejs</string>
+    <string name="enter_crew_code_hint_text">Wpisz kod załogi</string>
+    <string name="bottom_menu_home_option">Home</string>
+    <string name="bottom_menu_journal_option">Dziennik</string>
+    <string name="bottom_menu_unit_option">Jednostka</string>
+    <string name="bottom_menu_profile_option">Profil</string>
+</resources>
