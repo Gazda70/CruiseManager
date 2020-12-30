@@ -8,7 +8,10 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import database.CruiseInfo
 import gazda.cruisemanagerapp.R
 import gazda.cruisemanagerapp.databinding.CruisesOverviewFragmentBinding
 
@@ -18,6 +21,8 @@ class CruisesOverviewFragment : Fragment() {
     private lateinit var viewModel: CruisesOverviewViewModel
 
     private lateinit var binding:CruisesOverviewFragmentBinding
+
+    private lateinit var  adapter:CruisesOverwievRecyclerViewAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -29,6 +34,13 @@ class CruisesOverviewFragment : Fragment() {
 
         // get the ViewModel.
         viewModel = ViewModelProvider(this).get(CruisesOverviewViewModel::class.java)
+
+        //get the RecyclerView adapter
+        adapter = CruisesOverwievRecyclerViewAdapter(viewModel.getMyCruises())
+
+        binding.activeCruisesView.layoutManager = LinearLayoutManager(context)
+        binding.activeCruisesView.adapter = adapter
+        setActiveCruisesInfoLabelValue()
 
         // Create the observer which updates the UI.
         val cruiseAddingObserver = Observer<Boolean> { newValue ->
@@ -61,6 +73,15 @@ class CruisesOverviewFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this).get(CruisesOverviewViewModel::class.java)
         // TODO: Use the ViewModel
+    }
+
+    private fun setActiveCruisesInfoLabelValue()
+    {
+        if(viewModel.cruises.isEmpty()){
+            binding.activeCruisesStatusInformationText.visibility = View.VISIBLE
+        }else{
+            binding.activeCruisesStatusInformationText.visibility = View.INVISIBLE
+        }
     }
 
 }

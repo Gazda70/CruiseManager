@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import database.CruiseInfo
 import gazda.cruisemanagerapp.R
 
-class CruisesOverwievRecyclerViewAdapter(private val cruisesList:Array<CruiseInfo>): RecyclerView.Adapter<CruisesOverwievRecyclerViewAdapter.CruiseViewHolder>() {
+class CruisesOverwievRecyclerViewAdapter(private val cruisesList:ArrayList<CruiseInfo>): RecyclerView.Adapter<CruisesOverwievRecyclerViewAdapter.CruiseViewHolder>() {
 
     class CruiseViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val cruiseName:TextView = itemView.findViewById(R.id.cruise_name)
