@@ -5,7 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import database.CruiseInfo
+import database.entities.CruiseInfo
 import gazda.cruisemanagerapp.R
 
 class CruisesOverwievRecyclerViewAdapter(private val cruisesList:ArrayList<CruiseInfo>): RecyclerView.Adapter<CruisesOverwievRecyclerViewAdapter.CruiseViewHolder>() {

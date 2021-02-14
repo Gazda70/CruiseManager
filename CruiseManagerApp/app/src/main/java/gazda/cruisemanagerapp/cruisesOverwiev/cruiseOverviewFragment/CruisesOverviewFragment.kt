@@ -9,9 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import database.CruiseInfo
 import gazda.cruisemanagerapp.R
 import gazda.cruisemanagerapp.databinding.CruisesOverviewFragmentBinding
 
