@@ -1,0 +1,67 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "b7dfbc65a2431b5519860e0951ceecb7",
+    "entities": [
+      {
+        "tableName": "CruiseInfo",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`cruiseId` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `cruiseName` TEXT NOT NULL, `cruiseDate` TEXT NOT NULL, `cruiseCaptain` TEXT NOT NULL, `cruiseUnit` TEXT NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "cruiseId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "cruiseName",
+            "columnName": "cruiseName",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "cruiseDate",
+            "columnName": "cruiseDate",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "cruiseCaptain",
+            "columnName": "cruiseCaptain",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "cruiseUnit",
+            "columnName": "cruiseUnit",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "cruiseId"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [
+          {
+            "name": "index_CruiseInfo_cruiseName",
+            "unique": true,
+            "columnNames": [
+              "cruiseName"
+            ],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_CruiseInfo_cruiseName` ON `${TABLE_NAME}` (`cruiseName`)"
+          }
+        ],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'b7dfbc65a2431b5519860e0951ceecb7')"
+    ]
+  }
+}

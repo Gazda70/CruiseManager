@@ -13,6 +13,8 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.snackbar.Snackbar
+import database.CruiseDatabase
 import gazda.cruisemanagerapp.R
 import gazda.cruisemanagerapp.databinding.CruisesOverviewFragmentBinding
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
@@ -36,10 +38,10 @@ class CruisesOverviewFragment : Fragment() {
         // Subscribe to the emissions of the user name from the view model.
         // Update the user name text view, at every onNext emission.
         // In case of error, log the exception.
-        disposable.add(viewModel.getCruisesFromDatabase()
+        disposable += (viewModel.getCruisesFromDatabase()
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
-            .subscribe({  },
+            .subscribe({ adapter.addCruise(it) },
                 { error -> Log.e(TAG, "Unable to get cruise info", error) }))
     }
 
@@ -53,12 +55,15 @@ class CruisesOverviewFragment : Fragment() {
 
         // get the ViewModel.
         viewModel = ViewModelProvider(this).get(CruisesOverviewViewModel::class.java)
-
+        viewModel.setDataSource(CruiseDatabase.getInstance(this.requireContext()).cruiseInfoDao())
         //get the RecyclerView adapter
-        adapter = CruisesOverwievRecyclerViewAdapter(viewModel.getMyCruises())
+        adapter = CruisesOverwievRecyclerViewAdapter(viewModel.getMyCruises(),
+            binding.activeCruisesView
+        )
 
         binding.activeCruisesView.layoutManager = LinearLayoutManager(context)
         binding.activeCruisesView.adapter = adapter
+
         setActiveCruisesInfoLabelValue()
 
         // Create the observer which updates the UI.
@@ -86,6 +91,11 @@ class CruisesOverviewFragment : Fragment() {
         }
 
         return binding.root
+    }
+
+    override fun onStop() {
+        super.onStop()
+        disposable.clear()
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {

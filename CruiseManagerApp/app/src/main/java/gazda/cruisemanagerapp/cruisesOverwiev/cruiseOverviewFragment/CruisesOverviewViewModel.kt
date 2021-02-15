@@ -7,10 +7,15 @@ import database.DAO.CruiseInfoDao
 import database.entities.CruiseInfo
 import io.reactivex.rxjava3.core.Flowable
 
-class CruisesOverviewViewModel(private val dataSource: CruiseInfoDao) : ViewModel() {
+class CruisesOverviewViewModel() : ViewModel() {
     // TODO: Implement the ViewModel
+    private lateinit var dataSource: CruiseInfoDao
 
     var cruises:ArrayList<CruiseInfo> = ArrayList<CruiseInfo>()
+
+    fun setDataSource(newDataSource:CruiseInfoDao){
+        dataSource = newDataSource
+    }
 
     fun getMyCruises():ArrayList<CruiseInfo>{
             if(cruises.isEmpty()){
@@ -49,4 +54,6 @@ class CruisesOverviewViewModel(private val dataSource: CruiseInfoDao) : ViewMode
      fun getCruisesFromDatabase():Flowable<CruiseInfo>{
         return dataSource.getAll()
     }
+
+
 }
