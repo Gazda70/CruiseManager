@@ -2,10 +2,12 @@ package gazda.cruisemanagerapp.cruisesOverwiev.cruiseOverviewFragment
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import database.CruiseDao
+import database.CruiseDatabase
+import database.DAO.CruiseInfoDao
 import database.entities.CruiseInfo
+import io.reactivex.rxjava3.core.Flowable
 
-class CruisesOverviewViewModel : ViewModel() {
+class CruisesOverviewViewModel(private val dataSource: CruiseInfoDao) : ViewModel() {
     // TODO: Implement the ViewModel
 
     var cruises:ArrayList<CruiseInfo> = ArrayList<CruiseInfo>()
@@ -44,7 +46,7 @@ class CruisesOverviewViewModel : ViewModel() {
         MutableLiveData<Boolean>()
     }
 
-    private fun getCruisesFromDatabase(){
-      //  var temp = CruiseDatabase
+     fun getCruisesFromDatabase():Flowable<CruiseInfo>{
+        return dataSource.getAll()
     }
 }

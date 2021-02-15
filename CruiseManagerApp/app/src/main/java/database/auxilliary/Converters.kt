@@ -1,6 +1,7 @@
 package database.auxilliary
 
 import androidx.room.TypeConverter
+import database.customDataTypes.RainFallState
 import database.customDataTypes.SailState
 import database.customDataTypes.WindDirection
 
@@ -56,5 +57,38 @@ class Converters {
             else -> WindDirection.NOT_GIVEN
         }
     }
+
+    @TypeConverter
+    fun fromRainStateToInt(value: RainFallState?): Int? {
+        return when(value){
+            RainFallState.NONE -> 0
+            RainFallState.LITTLE_RAIN -> 1
+            RainFallState.NORMAL_RAIN -> 2
+            RainFallState.HEAVY_RAIN -> 3
+            RainFallState.SNOW -> 4
+            RainFallState.SNOW_AND_RAIN -> 5
+            RainFallState.FOG -> 6
+            RainFallState.HAILSTONES -> 7
+            RainFallState.HOARFROST -> 8
+            else -> 9
+        }
+    }
+
+    @TypeConverter
+    fun fromRainStateToInt(value: Int?):RainFallState? {
+        return when(value){
+            0 -> RainFallState.NONE
+            1 -> RainFallState.LITTLE_RAIN
+            2 -> RainFallState.NORMAL_RAIN
+            3 -> RainFallState.HEAVY_RAIN
+            4 -> RainFallState.SNOW
+            5 -> RainFallState.SNOW_AND_RAIN
+            6 -> RainFallState.FOG
+            7 -> RainFallState.HAILSTONES
+            8 -> RainFallState.HOARFROST
+            else -> RainFallState.NO_INFO
+        }
+    }
+
 
 }

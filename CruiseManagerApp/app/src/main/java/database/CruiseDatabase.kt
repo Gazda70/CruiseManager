@@ -20,31 +20,16 @@ abstract class CruiseDatabase : RoomDatabase() {
     abstract fun cruiseInfoDao(): CruiseInfoDao
 
     companion object {
-        private var INSTANCE: CruiseDatabase? = null
-        private const val DB_NAME = "movies.db"
+        @Volatile private var INSTANCE: CruiseDatabase? = null
 
-        fun getDatabase(context: Context): CruiseDatabase {
-            if (INSTANCE == null) {
-                synchronized(CruiseDatabase::class.java) {
-                    if (INSTANCE == null) {
-                        INSTANCE = Room.databaseBuilder(
-                            context.applicationContext,
-                            CruiseDatabase::class.java,
-                            DB_NAME
-                        )
-                            //.allowMainThreadQueries() // Uncomment if you don't want to use RxJava or coroutines just yet (blocks UI thread)
-                            .addCallback(object : Callback() {
-                                override fun onCreate(db: SupportSQLiteDatabase) {
-                                    super.onCreate(db)
-                                    Log.d("MoviesDatabase", "populating with data...")
-                                   // GlobalScope.launch(Dispatchers.IO) { rePopulateDb(INSTANCE) }
-                                }
-                            }).build()
-                    }
-                }
+        fun getInstance(context: Context): CruiseDatabase =
+            INSTANCE ?: synchronized(this) {
+                INSTANCE ?: buildDatabase(context).also { INSTANCE = it }
             }
 
-            return INSTANCE!!
-        }
+        private fun buildDatabase(context: Context) =
+            Room.databaseBuilder(context.applicationContext,
+                CruiseDatabase::class.java, "Sample.db")
+                .build()
     }
 }

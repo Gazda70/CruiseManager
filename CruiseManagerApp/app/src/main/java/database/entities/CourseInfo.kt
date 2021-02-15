@@ -8,7 +8,7 @@ import androidx.room.PrimaryKey
 data class CourseInfo(
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "courseId")
-    val id: Int = 0,
+    val id: Long = 0,
     var compassCourse:Double = 0.0,
     var declination:Double = 0.0,
     var deviation:Double = 0.0,

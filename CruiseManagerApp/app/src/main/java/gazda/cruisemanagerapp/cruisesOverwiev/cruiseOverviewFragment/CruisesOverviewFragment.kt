@@ -1,26 +1,47 @@
 package gazda.cruisemanagerapp.cruisesOverwiev.cruiseOverviewFragment
 
+import android.content.ContentValues.TAG
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import gazda.cruisemanagerapp.R
 import gazda.cruisemanagerapp.databinding.CruisesOverviewFragmentBinding
-
+import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
+import io.reactivex.rxjava3.disposables.CompositeDisposable
+import io.reactivex.rxjava3.disposables.Disposable
+import io.reactivex.rxjava3.schedulers.Schedulers
 
 class CruisesOverviewFragment : Fragment() {
+
 
     private lateinit var viewModel: CruisesOverviewViewModel
 
     private lateinit var binding:CruisesOverviewFragmentBinding
 
     private lateinit var  adapter:CruisesOverwievRecyclerViewAdapter
+
+    private val disposable = CompositeDisposable()
+
+    override fun onStart() {
+        super.onStart()
+        // Subscribe to the emissions of the user name from the view model.
+        // Update the user name text view, at every onNext emission.
+        // In case of error, log the exception.
+        disposable.add(viewModel.getCruisesFromDatabase()
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe({  },
+                { error -> Log.e(TAG, "Unable to get cruise info", error) }))
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -82,4 +103,9 @@ class CruisesOverviewFragment : Fragment() {
         }
     }
 
+    operator fun CompositeDisposable.plusAssign(disposable: Disposable){
+        this.add(disposable)
+    }
 }
+
+
