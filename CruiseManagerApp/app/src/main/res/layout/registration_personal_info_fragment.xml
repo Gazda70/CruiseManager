@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <data class="RegistrationPersonalInfoFragmentBinding">
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/registration_personal_info_base"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".registration.RegistrationPersonalInfoFragment"
+        android:focusableInTouchMode="true"
+        android:clickable="true"
+        android:focusable="true">
+
+
+        <TextView
+            android:id="@+id/registration_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="607dp"
+            android:text="@string/registration_info"
+            android:textSize="36sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/registration_name_input"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="43dp"
+            android:layout_marginBottom="486dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/registration_name_input_field"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="@string/registration_name" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/registration_surname_input"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="21dp"
+            android:layout_marginBottom="486dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/registration_name_input">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/registration_surname_input_field"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="@string/registration_surname" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/continue_registration_button"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="212dp"
+            android:layout_marginBottom="372dp"
+            android:text="@string/continue_button_writing"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:backgroundTint="@android:color/darker_gray"
+            android:clickable="true"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

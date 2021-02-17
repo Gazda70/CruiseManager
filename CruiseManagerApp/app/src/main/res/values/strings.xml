@@ -7,4 +7,8 @@
     <string name="bottom_menu_journal_option">Dziennik</string>
     <string name="bottom_menu_unit_option">Jednostka</string>
     <string name="bottom_menu_profile_option">Profil</string>
+    <string name="registration_info">Rejestracja</string>
+    <string name="registration_name">Imię</string>
+    <string name="registration_surname">Nazwisko</string>
+    <string name="continue_button_writing">Dalej</string>
 </resources>

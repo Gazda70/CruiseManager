@@ -108,7 +108,8 @@
             android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:menu="@menu/cruise_overview_menu" />
+            app:menu="@menu/cruise_overview_menu"
+            app:labelVisibilityMode="labeled"/>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/active_cruises_view"

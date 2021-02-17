@@ -9,5 +9,13 @@
         android:id="@+id/cruisesOverwievFragment"
         android:name="gazda.cruisemanagerapp.cruisesOverwiev.cruiseOverviewFragment.CruisesOverviewFragment"
         android:label="cruises_overwiev_fragment"
-        tools:layout="@layout/cruises_overwiev_fragment" />
+        tools:layout="@layout/cruises_overwiev_fragment" >
+        <action
+            android:id="@+id/action_cruisesOverwievFragment_to_registrationPersonalInfoFragment"
+            app:destination="@id/registrationPersonalInfoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registrationPersonalInfoFragment"
+        android:name="gazda.cruisemanagerapp.registration.RegistrationPersonalInfoFragment"
+        android:label="RegistrationPersonalInfoFragment" />
 </navigation>

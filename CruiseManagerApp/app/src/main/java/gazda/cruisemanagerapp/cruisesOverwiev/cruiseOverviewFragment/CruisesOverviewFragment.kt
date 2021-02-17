@@ -11,6 +11,9 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.Navigation
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.NavHostFragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.snackbar.Snackbar
@@ -21,6 +24,7 @@ import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.disposables.CompositeDisposable
 import io.reactivex.rxjava3.disposables.Disposable
 import io.reactivex.rxjava3.schedulers.Schedulers
+import kotlinx.android.synthetic.main.cruises_overwiev_fragment.view.*
 
 class CruisesOverviewFragment : Fragment() {
 
@@ -78,14 +82,17 @@ class CruisesOverviewFragment : Fragment() {
 
 
 
-
-        BottomNavigationView.OnNavigationItemSelectedListener { item ->
+        binding.root.bottom_navigation.setOnNavigationItemSelectedListener { item ->
             when(item.itemId) {
                 R.id.home_option -> {
                     // Respond to navigation item 1 click
                     true
                 }
 
+                R.id.profile_option ->{
+                    binding.root.findNavController().navigate(R.id.action_cruisesOverwievFragment_to_registrationPersonalInfoFragment)
+                    true
+                }
                 else -> false
             }
         }
