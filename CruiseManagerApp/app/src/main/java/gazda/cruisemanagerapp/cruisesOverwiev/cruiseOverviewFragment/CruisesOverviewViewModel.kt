@@ -51,9 +51,16 @@ class CruisesOverviewViewModel() : ViewModel() {
         MutableLiveData<Boolean>()
     }
 
-     fun getCruisesFromDatabase():Flowable<CruiseInfo>{
+     fun getFutureCruisesFromDatabase():Flowable<CruiseInfo>{
         return dataSource.getAll()
     }
 
+    fun getPreviousCruisesFromDatabase():Flowable<CruiseInfo>{
+        return dataSource.getAll()
+    }
+
+    fun getCurrentCruiseFromDatabase():CruiseInfo?{
+        return CruiseInfo()
+    }
 
 }

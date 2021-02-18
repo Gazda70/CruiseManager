@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     >
 
-    <data class="RegistrationPersonalInfoFragmentBinding">
+    <data class="CruiseOverviewFragmentBinding">
 
     </data>
 
@@ -12,14 +12,14 @@
         android:id="@+id/registration_personal_info_base"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".registration.RegistrationPersonalInfoFragment"
+        tools:context=".registration.CruiseOverviewFragment"
         android:focusableInTouchMode="true"
         android:clickable="true"
         android:focusable="true">
 
 
         <TextView
-            android:id="@+id/registration_info"
+            android:id="@+id/registration_personal_info"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="607dp"

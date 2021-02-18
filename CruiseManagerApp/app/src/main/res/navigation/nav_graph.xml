@@ -13,9 +13,17 @@
         <action
             android:id="@+id/action_cruisesOverwievFragment_to_registrationPersonalInfoFragment"
             app:destination="@id/registrationPersonalInfoFragment" />
+        <action
+            android:id="@+id/action_cruisesOverwievFragment_to_activeCruiseFragment"
+            app:destination="@id/activeCruiseFragment" />
     </fragment>
     <fragment
         android:id="@+id/registrationPersonalInfoFragment"
         android:name="gazda.cruisemanagerapp.registration.RegistrationPersonalInfoFragment"
         android:label="RegistrationPersonalInfoFragment" />
+    <fragment
+        android:id="@+id/activeCruiseFragment"
+        android:name="gazda.cruisemanagerapp.activeCruiseFragment.ActiveCruiseFragment"
+        android:label="fragment_active_cruise"
+        tools:layout="@layout/fragment_active_cruise" />
 </navigation>
