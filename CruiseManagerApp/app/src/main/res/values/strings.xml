@@ -104,7 +104,7 @@
         "For example, position the FAB to one side of stream of a cards so the FAB won’t interfere "
         "when a user tries to pick up one of cards.\n\n"
     </string>
-    <string name="active_cruise_inscription">Aktywny rejs: </string>
+    <string name="active_cruise_inscription">      Aktywny rejs:</string>
     <string name="current_watch_inscription">Obecna wachta:</string>
     <string name="next_watch_inscription">Następna wachta:</string>
 </resources>

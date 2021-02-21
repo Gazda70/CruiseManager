@@ -85,6 +85,7 @@ class CruisesOverviewFragment : Fragment(), ClickListener {
         gestureDetector = GestureDetector(activity, object : GestureDetector.SimpleOnGestureListener() {
             override fun onFling(p0: MotionEvent?, p1: MotionEvent?, p2: Float, p3: Float): Boolean {
                 Log.i("FLING PASKA", "Udało się!")
+                binding.root.findNavController().navigate(R.id.action_cruisesOverwievFragment_to_activeCruiseFragment)
                 return true
             }
 
