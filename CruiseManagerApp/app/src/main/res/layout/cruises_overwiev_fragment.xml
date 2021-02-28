@@ -15,6 +15,16 @@
         tools:context=".cruisesOverview.cruiseOverviewFragment.CruisesOverviewFragment">
 
 
+        <ImageView
+            android:id="@+id/imageView9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="84dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/divider"
+            app:srcCompat="@drawable/ic_floating_button_grey" />
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/future_cruises_view"
             android:layout_width="382dp"
@@ -37,18 +47,9 @@
             android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/future_cruises_view" />
+            app:layout_constraintTop_toBottomOf="@+id/future_cruises_view" >
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/add_cruise_floating_action_button"
-            android:layout_width="wrap_content"
-            android:layout_height="56dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="60dp"
-            android:clickable="true"
-            android:src="@android:drawable/ic_input_add"
-            app:layout_constraintEnd_toStartOf="@+id/add_cruise_hint"
-            app:layout_constraintTop_toBottomOf="@+id/divider" />
+        </androidx.recyclerview.widget.RecyclerView>
 
         <TextView
             android:id="@+id/add_cruise_hint"
@@ -75,11 +76,11 @@
             android:id="@+id/divider2"
             android:layout_width="0dp"
             android:layout_height="1dp"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="19dp"
             android:background="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/add_cruise_floating_action_button" />
+            app:layout_constraintTop_toBottomOf="@+id/imageView9" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/active_cruise_info_panel"

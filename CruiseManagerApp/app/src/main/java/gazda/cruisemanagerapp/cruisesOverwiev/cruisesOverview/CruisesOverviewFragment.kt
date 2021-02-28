@@ -1,28 +1,30 @@
-package gazda.cruisemanagerapp.cruisesOverwiev.cruiseOverviewFragment
+package gazda.cruisemanagerapp.cruisesOverwiev.cruisesOverview
 
 import android.annotation.SuppressLint
 import android.content.ContentValues.TAG
-import android.opengl.Visibility
 import android.os.Bundle
 import android.util.Log
 import android.view.*
-import android.widget.LinearLayout
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.google.android.material.snackbar.Snackbar
 import database.CruiseDatabase
+import database.connection.WebInterface
 import database.entities.CruiseInfo
+import database.entities.UsernameInfo
 import gazda.cruisemanagerapp.R
 import gazda.cruisemanagerapp.databinding.CruisesOverviewFragmentBinding
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.disposables.CompositeDisposable
 import io.reactivex.rxjava3.disposables.Disposable
 import io.reactivex.rxjava3.schedulers.Schedulers
-import kotlinx.android.synthetic.main.cruises_overwiev_fragment.view.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 
 
 class CruisesOverviewFragment : Fragment(), ClickListener {
@@ -38,7 +40,11 @@ class CruisesOverviewFragment : Fragment(), ClickListener {
 
     private lateinit var  gestureDetector: GestureDetector
 
+    private lateinit var retrofit: Retrofit
+
     private var activeCruise:CruiseInfo? = null
+
+    private lateinit var username:String
 
     private val disposable = CompositeDisposable()
 
@@ -81,6 +87,26 @@ class CruisesOverviewFragment : Fragment(), ClickListener {
 
         binding.previousCruisesView.layoutManager = LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false)
         binding.previousCruisesView.adapter = adapterPrevious
+
+
+        retrofit = Retrofit.Builder()
+            .baseUrl("https://webhooks.mongodb-realm.com/api/client/v2.0/app/applicationpiotreg-zuvkr/service/CruiseAppManagement/incoming_webhook/webhook0/")
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+
+        val service = retrofit.create(WebInterface::class.java)
+        val call = service.getCurrentUsername(username)
+
+        call.enqueue(object : Callback<UsernameInfo> {
+            override fun onResponse(call: Call<UsernameInfo>, response: Response<UsernameInfo>) {
+                if (response.code() == 200) {
+                    Log.i("Odpowiedź", "UDAŁO SIĘ POŁĄCZYĆ")
+                }
+            }
+            override fun onFailure(call: Call<UsernameInfo>, t: Throwable) {
+                Log.i("Odpowiedź", "NIE UDAŁO SIĘ POŁĄCZYĆ")
+            }
+        })
 
         gestureDetector = GestureDetector(activity, object : GestureDetector.SimpleOnGestureListener() {
             override fun onFling(p0: MotionEvent?, p1: MotionEvent?, p2: Float, p3: Float): Boolean {

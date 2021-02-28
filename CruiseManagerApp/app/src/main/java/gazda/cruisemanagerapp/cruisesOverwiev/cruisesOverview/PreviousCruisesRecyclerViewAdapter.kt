@@ -1,4 +1,4 @@
-package gazda.cruisemanagerapp.cruisesOverwiev.cruiseOverviewFragment
+package gazda.cruisemanagerapp.cruisesOverwiev.cruisesOverview
 
 import android.view.LayoutInflater
 import android.view.View

@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".crewInfo.CrewInfoFragment">
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="273dp"
+        android:layout_height="114dp"
+        android:layout_marginEnd="65dp"
+        android:layout_marginBottom="17dp"
+        app:cardBackgroundColor="@android:color/darker_gray"
+        app:layout_constraintBottom_toTopOf="@+id/textView31"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="270dp"
+            android:layout_height="114dp"
+            android:layout_marginEnd="70dp"
+            android:layout_marginBottom="486dp">
+
+            <TextView
+                android:id="@+id/textView30"
+                android:layout_width="157dp"
+                android:layout_height="43dp"
+                android:layout_marginEnd="56dp"
+                android:layout_marginBottom="52dp"
+                android:background="@color/white"
+                android:text="TextView"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/textView29"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="236dp"
+        android:layout_marginBottom="664dp"
+        android:text="Kod do załogi"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/textView31"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="280dp"
+        android:layout_marginBottom="488dp"
+        android:text="Załoga"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView33"
+        android:layout_width="54dp"
+        android:layout_height="57dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="408dp"
+        android:src="@drawable/ic_ellipse_17"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/imageView34" />
+
+    <ImageView
+        android:id="@+id/imageView32"
+        android:layout_width="56dp"
+        android:layout_height="60dp"
+        android:layout_marginEnd="52dp"
+        android:layout_marginBottom="408dp"
+        android:src="@drawable/ic_ellipse_17"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/imageView33" />
+
+    <ImageView
+        android:id="@+id/imageView34"
+        android:layout_width="58dp"
+        android:layout_height="59dp"
+        android:layout_marginEnd="76dp"
+        android:layout_marginBottom="408dp"
+        android:src="@drawable/ic_ellipse_17"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/textView32"
+        android:layout_width="26dp"
+        android:layout_height="32dp"
+        android:layout_marginEnd="76dp"
+        android:layout_marginBottom="360dp"
+        android:text="I"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/textView33" />
+
+    <TextView
+        android:id="@+id/textView33"
+        android:layout_width="22dp"
+        android:layout_height="27dp"
+        android:layout_marginEnd="88dp"
+        android:layout_marginBottom="364dp"
+        android:text="II"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/textView34" />
+
+    <TextView
+        android:id="@+id/textView34"
+        android:layout_width="21dp"
+        android:layout_height="31dp"
+        android:layout_marginEnd="44dp"
+        android:layout_marginBottom="364dp"
+        android:text="III"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/textView35"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="220dp"
+        android:layout_marginBottom="320dp"
+        android:text="Rodzaj wachty"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView35"
+        android:layout_width="56dp"
+        android:layout_height="60dp"
+        android:layout_marginEnd="280dp"
+        android:layout_marginBottom="12dp"
+        android:background="@color/white"
+        android:src="@drawable/ic_ellipse_17"
+        app:layout_constraintBottom_toTopOf="@+id/imageView36"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView36"
+        android:layout_width="56dp"
+        android:layout_height="60dp"
+        android:layout_marginEnd="280dp"
+        android:layout_marginBottom="170dp"
+        android:src="@drawable/ic_ellipse_17"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/textView36"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="128dp"
+        android:layout_marginBottom="56dp"
+        android:text="wachta nawigacyjna"
+        app:layout_constraintBottom_toTopOf="@+id/textView37"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/textView37"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="130dp"
+        android:layout_marginBottom="184dp"
+        android:text="wachta bosmańska"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView37"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="45dp"
+        android:layout_marginBottom="87dp"
+        android:src="@drawable/ic_file_off"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/textView38" />
+
+    <TextView
+        android:id="@+id/textView38"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="116dp"
+        android:layout_marginBottom="92dp"
+        android:text="Harmonogram wacht"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

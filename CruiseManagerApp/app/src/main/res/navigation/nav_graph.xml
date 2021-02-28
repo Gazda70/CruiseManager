@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/cruisesOverwievFragment"
-        android:name="gazda.cruisemanagerapp.cruisesOverwiev.cruiseOverviewFragment.CruisesOverviewFragment"
+        android:name="gazda.cruisemanagerapp.cruisesOverwiev.cruisesOverview.CruisesOverviewFragment"
         android:label="cruises_overwiev_fragment"
         tools:layout="@layout/cruises_overwiev_fragment" >
         <action
@@ -23,7 +23,17 @@
         android:label="RegistrationPersonalInfoFragment" />
     <fragment
         android:id="@+id/activeCruiseFragment"
-        android:name="gazda.cruisemanagerapp.activeCruiseFragment.ActiveCruiseFragment"
+        android:name="gazda.cruisemanagerapp.activeCruise.ActiveCruiseFragment"
         android:label="fragment_active_cruise"
         tools:layout="@layout/fragment_active_cruise" />
+    <fragment
+        android:id="@+id/greetingScreen"
+        android:name="gazda.cruisemanagerapp.greetingScreen.GreetingScreen"
+        android:label="greeting_screen_fragment"
+        tools:layout="@layout/greeting_screen_fragment" />
+    <fragment
+        android:id="@+id/actionChoiceFragment"
+        android:name="gazda.cruisemanagerapp.actionChoice.ActionChoiceFragment"
+        android:label="action_choice_fragment"
+        tools:layout="@layout/action_choice_fragment" />
 </navigation>

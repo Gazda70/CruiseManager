@@ -1,8 +1,7 @@
-package gazda.cruisemanagerapp.cruisesOverwiev.cruiseOverviewFragment
+package gazda.cruisemanagerapp.cruisesOverwiev.cruisesOverview
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import database.CruiseDatabase
 import database.DAO.CruiseInfoDao
 import database.entities.CruiseInfo
 import io.reactivex.rxjava3.core.Flowable

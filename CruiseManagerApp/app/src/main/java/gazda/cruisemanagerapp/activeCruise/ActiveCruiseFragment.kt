@@ -1,4 +1,4 @@
-package gazda.cruisemanagerapp.activeCruiseFragment
+package gazda.cruisemanagerapp.activeCruise
 
 import android.os.Bundle
 import android.view.LayoutInflater
