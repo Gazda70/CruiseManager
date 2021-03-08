@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/cruisesOverwievFragment">
+    app:startDestination="@id/loginFragment">
 
     <fragment
         android:id="@+id/cruisesOverwievFragment"
@@ -11,16 +11,20 @@
         android:label="cruises_overwiev_fragment"
         tools:layout="@layout/cruises_overwiev_fragment" >
         <action
-            android:id="@+id/action_cruisesOverwievFragment_to_registrationPersonalInfoFragment"
-            app:destination="@id/registrationPersonalInfoFragment" />
-        <action
             android:id="@+id/action_cruisesOverwievFragment_to_activeCruiseFragment"
             app:destination="@id/activeCruiseFragment" />
+        <action
+            android:id="@+id/action_cruisesOverwievFragment_to_createCruiseFragment"
+            app:destination="@id/createCruiseFragment" />
     </fragment>
     <fragment
         android:id="@+id/registrationPersonalInfoFragment"
         android:name="gazda.cruisemanagerapp.registration.RegistrationPersonalInfoFragment"
-        android:label="RegistrationPersonalInfoFragment" />
+        android:label="RegistrationPersonalInfoFragment" >
+        <action
+            android:id="@+id/action_registrationPersonalInfoFragment_to_greetingScreen"
+            app:destination="@id/greetingScreen" />
+    </fragment>
     <fragment
         android:id="@+id/activeCruiseFragment"
         android:name="gazda.cruisemanagerapp.activeCruise.ActiveCruiseFragment"
@@ -30,10 +34,42 @@
         android:id="@+id/greetingScreen"
         android:name="gazda.cruisemanagerapp.greetingScreen.GreetingScreen"
         android:label="greeting_screen_fragment"
-        tools:layout="@layout/greeting_screen_fragment" />
+        tools:layout="@layout/greeting_screen_fragment" >
+        <action
+            android:id="@+id/action_greetingScreen_to_actionChoiceFragment"
+            app:destination="@id/actionChoiceFragment" />
+    </fragment>
     <fragment
         android:id="@+id/actionChoiceFragment"
         android:name="gazda.cruisemanagerapp.actionChoice.ActionChoiceFragment"
         android:label="action_choice_fragment"
-        tools:layout="@layout/action_choice_fragment" />
+        tools:layout="@layout/action_choice_fragment" >
+        <action
+            android:id="@+id/action_actionChoiceFragment_to_createCruiseFragment"
+            app:destination="@id/createCruiseFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/createCruiseFragment"
+        android:name="gazda.cruisemanagerapp.createCruise.CreateCruiseFragment"
+        android:label="CreateCruiseFragment" >
+        <action
+            android:id="@+id/action_createCruiseFragment_to_threeMainOptionsFragment"
+            app:destination="@id/threeMainOptionsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/threeMainOptionsFragment"
+        android:name="gazda.cruisemanagerapp.threeMainOptions.ThreeMainOptionsFragment"
+        android:label="three_main_options_fragment"
+        tools:layout="@layout/three_main_options_fragment" />
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="gazda.cruisemanagerapp.login.LoginFragment"
+        android:label="LoginFragment" >
+        <action
+            android:id="@+id/action_loginFragment_to_cruisesOverwievFragment"
+            app:destination="@id/cruisesOverwievFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_registrationPersonalInfoFragment"
+            app:destination="@id/registrationPersonalInfoFragment" />
+    </fragment>
 </navigation>

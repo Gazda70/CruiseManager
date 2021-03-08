@@ -9,6 +9,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import database.CruiseDatabase
 import database.connection.WebInterface
@@ -20,6 +21,7 @@ import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.disposables.CompositeDisposable
 import io.reactivex.rxjava3.disposables.Disposable
 import io.reactivex.rxjava3.schedulers.Schedulers
+import kotlinx.android.synthetic.main.cruises_overwiev_fragment.view.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -163,7 +165,7 @@ class CruisesOverviewFragment : Fragment(), ClickListener {
                 }
 
                 R.id.profile_option ->{
-                    binding.root.findNavController().navigate(R.id.action_cruisesOverwievFragment_to_registrationPersonalInfoFragment)
+             //       binding.root.findNavController().navigate(R.id.action_cruisesOverwievFragment_to_registrationPersonalInfoFragment)
                     true
                 }
                 else -> false

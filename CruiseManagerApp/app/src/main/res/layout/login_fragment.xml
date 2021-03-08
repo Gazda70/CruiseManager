@@ -4,33 +4,33 @@
     xmlns:tools="http://schemas.android.com/tools"
     >
 
-    <data class="RegistrationPersonalInfoFragmentBinding">
+    <data class="LoginFragmentBinding">
 
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/registration_personal_info_base"
+        android:id="@+id/login_personal_info_base"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".registration.RegistrationPersonaInfoFragment"
+        tools:context=".login.LoginFragment"
         android:focusableInTouchMode="true"
         android:clickable="true"
         android:focusable="true">
 
 
         <TextView
-            android:id="@+id/registration_personal_info"
+            android:id="@+id/login_personal_info"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="607dp"
-            android:text="@string/registration_info"
+            android:text="Logowanie"
             android:textSize="36sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/registration_name_input"
+            android:id="@+id/login_name_input"
             android:layout_width="150dp"
             android:layout_height="50dp"
             android:layout_marginStart="43dp"
@@ -39,39 +39,51 @@
             app:layout_constraintStart_toStartOf="parent">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/registration_name_input_field"
+                android:id="@+id/login_name_input_field"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:hint="@string/registration_name" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/registration_surname_input"
+            android:id="@+id/login_surname_input"
             android:layout_width="150dp"
             android:layout_height="50dp"
-            android:layout_marginStart="21dp"
-            android:layout_marginBottom="486dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/registration_name_input">
+            android:layout_marginEnd="49dp"
+            android:layout_marginBottom="64dp"
+            app:layout_constraintBottom_toTopOf="@+id/continue_login_button"
+            app:layout_constraintEnd_toEndOf="parent">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/registration_surname_input_field"
+                android:id="@+id/login_surname_input_field"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:hint="@string/registration_surname" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
-            android:id="@+id/continue_registration_button"
+        android:id="@+id/continue_login_button"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="212dp"
+        android:layout_marginBottom="372dp"
+        android:text="@string/continue_button_writing"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:backgroundTint="@android:color/darker_gray"
+        android:clickable="true"/>
+
+        <Button
+            android:id="@+id/register_login_button"
             android:layout_width="150dp"
             android:layout_height="50dp"
-            android:layout_marginStart="212dp"
+            android:layout_marginStart="40dp"
             android:layout_marginBottom="372dp"
-            android:text="@string/continue_button_writing"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
             android:backgroundTint="@android:color/darker_gray"
-            android:clickable="true"/>
+            android:clickable="true"
+            android:text="Załóż konto"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

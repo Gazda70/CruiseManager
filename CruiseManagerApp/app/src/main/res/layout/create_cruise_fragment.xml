@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <data class="CreateCruiseFragmentBinding">
+
+    </data>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/proceed_button"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".createCruise.CreateCruiseFragment">
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/cruise_name_input"
+        android:layout_width="282dp"
+        android:layout_height="58dp"
+        android:layout_marginEnd="61dp"
+        android:layout_marginBottom="91dp"
+        app:layout_constraintBottom_toTopOf="@+id/cruise_start_input"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/cruise_name_input_field"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nazwa rejsu" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/cruise_start_input"
+        android:layout_width="99dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="84dp"
+        android:layout_marginBottom="385dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/cruise_end_input">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/cruise_start_input_field"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Początek"
+            android:textSize="16sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/cruise_end_input"
+        android:layout_width="99dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="60dp"
+        android:layout_marginBottom="48dp"
+        app:layout_constraintBottom_toTopOf="@+id/continue_cruise_creation_button"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/cruise_end_input_field"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Koniec"
+            android:textSize="16sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/continue_cruise_creation_button"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="200dp"
+        android:layout_marginBottom="288dp"
+        android:backgroundTint="@android:color/darker_gray"
+        android:clickable="true"
+        android:text="@string/continue_button_writing"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
