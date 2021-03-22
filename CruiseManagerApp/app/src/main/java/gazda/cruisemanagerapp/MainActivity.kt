@@ -12,18 +12,13 @@ import android.widget.EditText
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import database.connection.RealmContainer
-import io.realm.OrderedRealmCollectionChangeListener
 import io.realm.Realm
-import io.realm.RealmResults
-import io.realm.kotlin.where
 import io.realm.mongodb.App
 import io.realm.mongodb.AppConfiguration
 import io.realm.mongodb.Credentials
 import io.realm.mongodb.sync.SyncConfiguration
 import kotlinx.android.synthetic.main.activity_main.*
-import database.entities.AppUser
 import io.realm.mongodb.User
-import org.bson.types.ObjectId
 
 class MainActivity : AppCompatActivity() {
 
@@ -66,13 +61,13 @@ class MainActivity : AppCompatActivity() {
                         .build()
                 RealmContainer.myRealm = Realm.getInstance(config)
 
-             /*   val newUser = AppUser(ObjectId(), "Piotr", "Gazda")
+             /*   val newUser = AppUser(ObjectId(), "Monika", "Respondek")
                RealmContainer.myRealm.executeTransactionAsync { r: Realm ->
                     r.insert(newUser)
                 }*/
                 // all tasks in the realm
-                val users : RealmResults<AppUser> = RealmContainer.myRealm.where<AppUser>().findAll()
-                Log.i("FROM DATABASE", "${users[users.size - 1]}")
+              /*  val users : RealmResults<AppUser> = RealmContainer.myRealm.where<AppUser>().findAll()
+                Log.i("FROM DATABASE", "${users[users.size - 1]}")*/
             }
         }
     }

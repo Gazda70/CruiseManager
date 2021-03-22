@@ -11,7 +11,7 @@ import gazda.cruisemanagerapp.R
 import kotlinx.android.synthetic.main.cruises_overwiev_single_cruise.view.*
 
 class FutureCruisesRecyclerViewAdapter(private val cruisesList:ArrayList<CruiseInfo>,
-        private val myClickListener:ClickListener)
+                                       private val myClickListener:ClickListener)
     : RecyclerView.Adapter<FutureCruisesRecyclerViewAdapter.CruiseViewHolder>() {
 
     class CruiseViewHolder(itemView: View, myClickListener:ClickListener)

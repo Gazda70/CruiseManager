@@ -2,19 +2,12 @@ package gazda.cruisemanagerapp.cruisesOverwiev.cruisesOverview
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import database.DAO.CruiseInfoDao
 import database.entities.CruiseInfo
 import io.reactivex.rxjava3.core.Flowable
 
 class CruisesOverviewViewModel() : ViewModel() {
-    // TODO: Implement the ViewModel
-    private lateinit var dataSource: CruiseInfoDao
 
     var cruises:ArrayList<CruiseInfo> = ArrayList<CruiseInfo>()
-
-    fun setDataSource(newDataSource:CruiseInfoDao){
-        dataSource = newDataSource
-    }
 
     fun getMyCruises():ArrayList<CruiseInfo>{
             if(cruises.isEmpty()){
@@ -25,38 +18,50 @@ class CruisesOverviewViewModel() : ViewModel() {
 
     private var dummyCruises:ArrayList<CruiseInfo> = arrayListOf(
         CruiseInfo(
-            0,
             "Rejs1",
             "30.12.2020",
             "Piotr Gazda",
-            "\"Marzenie\""
+            "\"Marzenie\"",
+                null,
+                null,
+                null,
+                null,
+                null
         ),
         CruiseInfo(
-            0,
             "Rejs2",
             "30.12.2020",
             "Bartosz Cichowski",
-            "\"Pan Nocy\""
+            "\"Pan Nocy\"",
+                null,
+                null,
+                null,
+                null,
+                null
         ),
         CruiseInfo(
-            0,
             "Rejs3",
             "30.12.2020",
             "Asia",
-            "\"Morska Dama\""
+            "\"Morska Dama\"",
+                null,
+                null,
+                null,
+                null,
+                null
         )
     )
     val addCruise: MutableLiveData<Boolean> by lazy {
         MutableLiveData<Boolean>()
     }
 
-     fun getFutureCruisesFromDatabase():Flowable<CruiseInfo>{
+  /*   fun getFutureCruisesFromDatabase():Flowable<CruiseInfo>{
         return dataSource.getAll()
     }
 
     fun getPreviousCruisesFromDatabase():Flowable<CruiseInfo>{
         return dataSource.getAll()
-    }
+    }*/
 
     fun getCurrentCruiseFromDatabase():CruiseInfo?{
         return CruiseInfo()

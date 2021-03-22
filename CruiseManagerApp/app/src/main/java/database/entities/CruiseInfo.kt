@@ -5,7 +5,7 @@ import io.realm.RealmObject
 import io.realm.annotations.PrimaryKey
 import org.bson.types.ObjectId
 
-open class Cruise() : RealmObject() {
+open class CruiseInfo : RealmObject {
     @PrimaryKey
     var _id: ObjectId = ObjectId()
     var cruiseTitle: String? = null
@@ -39,4 +39,6 @@ open class Cruise() : RealmObject() {
         this.courseInfo = courseInfo
         this.weatherInfo = weatherInfo
     }
+
+    constructor() {} // RealmObject subclasses must provide an empty constructor
 }
