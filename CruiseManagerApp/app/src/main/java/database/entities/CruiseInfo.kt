@@ -1,23 +1,42 @@
 package database.entities
 
-import androidx.room.*
-import database.entities.CruiseInfo.Companion.FULL_NAME
+import io.realm.RealmList
+import io.realm.RealmObject
+import io.realm.annotations.PrimaryKey
+import org.bson.types.ObjectId
 
+open class Cruise() : RealmObject() {
+    @PrimaryKey
+    var _id: ObjectId = ObjectId()
+    var cruiseTitle: String? = null
+    var cruiseName: String? = null
+    var cruiseDate: String? = null
+    var cruiseCaptain: String? = null
+    var cruiseUnit: String? = null
+    var cruiseParticipants: RealmList<AppUser>? = null
+    var driveInfo: DriveInfo? = null
+    var courseInfo: CourseInfo? = null
+    var weatherInfo: WeatherInfo? = null
 
-@Entity(
-    indices = [Index(value = [FULL_NAME], unique = true)])
-data class CruiseInfo(
-    @PrimaryKey(autoGenerate = true)
-    @ColumnInfo(name = "cruiseId")
-    var id: Long = 0,
-    var cruiseName:String,
-    var cruiseDate:String,
-    var cruiseCaptain:String,
-    var cruiseUnit:String
-){
-    constructor() : this(0, "", "","","")
-
-    companion object {
-        const val FULL_NAME = "cruiseName"
+    constructor(
+            cruiseTitle: String?,
+            cruiseName: String?,
+            cruiseDate: String?,
+            cruiseCaptain: String?,
+            cruiseUnit: String?,
+            cruiseParticipants: RealmList<AppUser>?,
+            driveInfo: DriveInfo?,
+            courseInfo: CourseInfo?,
+            weatherInfo: WeatherInfo?
+    ){
+        this.cruiseTitle = cruiseTitle
+        this.cruiseName = cruiseName
+        this.cruiseDate = cruiseDate
+        this.cruiseCaptain = cruiseCaptain
+        this.cruiseUnit = cruiseUnit
+        this.cruiseParticipants = cruiseParticipants
+        this.driveInfo = driveInfo
+        this.courseInfo = courseInfo
+        this.weatherInfo = weatherInfo
     }
 }
