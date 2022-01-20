@@ -38,12 +38,12 @@ class LoginFragment : Fragment() {
             val name = binding.root.login_name_input_field.text.toString()
             val surname = binding.root.login_surname_input_field.text.toString()
 
-         if(checkInput(name, surname)){
-             if(viewModel.manageLoginCredentials(name, surname)) {
+        /* if(checkInput(name, surname)){
+             if(viewModel.manageLoginCredentials(name, surname)) {*/
                  binding.root.findNavController()
                      .navigate(R.id.action_loginFragment_to_cruisesOverwievFragment)
-             }
-         }
+             /*}
+         }*/
 
         }
 

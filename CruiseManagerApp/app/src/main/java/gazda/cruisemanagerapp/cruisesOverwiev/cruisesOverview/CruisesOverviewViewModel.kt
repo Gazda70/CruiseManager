@@ -2,22 +2,22 @@ package gazda.cruisemanagerapp.cruisesOverwiev.cruisesOverview
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import database.entities.CruiseInfo
-import io.reactivex.rxjava3.core.Flowable
+import database.entities.Cruise
+import database.entities.SailorsWatch
 
 class CruisesOverviewViewModel() : ViewModel() {
 
-    var cruises:ArrayList<CruiseInfo> = ArrayList<CruiseInfo>()
+    var cruises:ArrayList<Cruise> = ArrayList<Cruise>()
 
-    fun getMyCruises():ArrayList<CruiseInfo>{
+    fun getMyCruises():ArrayList<Cruise>{
             if(cruises.isEmpty()){
                 cruises = dummyCruises
             }
             return this.cruises
         }
 
-    private var dummyCruises:ArrayList<CruiseInfo> = arrayListOf(
-        CruiseInfo(
+    private var dummyCruises:ArrayList<Cruise> = arrayListOf(
+        Cruise(
             "Rejs1",
             "30.12.2020",
             "Piotr Gazda",
@@ -28,7 +28,7 @@ class CruisesOverviewViewModel() : ViewModel() {
                 null,
                 null
         ),
-        CruiseInfo(
+        Cruise(
             "Rejs2",
             "30.12.2020",
             "Bartosz Cichowski",
@@ -39,7 +39,7 @@ class CruisesOverviewViewModel() : ViewModel() {
                 null,
                 null
         ),
-        CruiseInfo(
+        Cruise(
             "Rejs3",
             "30.12.2020",
             "Asia",
@@ -63,8 +63,12 @@ class CruisesOverviewViewModel() : ViewModel() {
         return dataSource.getAll()
     }*/
 
-    fun getCurrentCruiseFromDatabase():CruiseInfo?{
-        return CruiseInfo()
+    fun getCurrentCruiseFromDatabase():Cruise{
+        return Cruise()
+    }
+
+    fun getCurrentSailorsWatchFromDatabase():SailorsWatch{
+        return SailorsWatch()
     }
 
 }

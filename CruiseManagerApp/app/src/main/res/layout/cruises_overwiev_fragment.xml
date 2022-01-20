@@ -145,17 +145,17 @@
                 app:layout_constraintStart_toEndOf="@+id/imageView" />
 
             <TextView
-                android:id="@+id/textView"
+                android:id="@+id/current_watch_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:layout_marginBottom="24dp"
                 android:text="TextView"
-                app:layout_constraintBottom_toTopOf="@+id/textView2"
+                app:layout_constraintBottom_toTopOf="@+id/next_watch_name"
                 app:layout_constraintStart_toEndOf="@+id/current_watch_text_view" />
 
             <TextView
-                android:id="@+id/textView2"
+                android:id="@+id/next_watch_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -165,7 +165,7 @@
                 app:layout_constraintStart_toEndOf="@+id/textView4" />
 
             <TextView
-                android:id="@+id/textView3"
+                android:id="@+id/active_cruise_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"

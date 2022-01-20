@@ -6,11 +6,11 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.snackbar.Snackbar
-import database.entities.CruiseInfo
+import database.entities.Cruise
 import gazda.cruisemanagerapp.R
 import kotlinx.android.synthetic.main.cruises_overwiev_single_cruise.view.*
 
-class PreviousCruisesRecyclerViewAdapter(private val cruisesList:ArrayList<CruiseInfo>,
+class PreviousCruisesRecyclerViewAdapter(private val cruisesList:ArrayList<Cruise>,
                                          private val myClickListener:ClickListener)
     : RecyclerView.Adapter<PreviousCruisesRecyclerViewAdapter.CruiseViewHolder>() {
 
@@ -45,7 +45,7 @@ class PreviousCruisesRecyclerViewAdapter(private val cruisesList:ArrayList<Cruis
         return cruisesList.size
     }
 
-    fun addCruise(newCruise: CruiseInfo){
+    fun addCruise(newCruise: Cruise){
         cruisesList.add(newCruise)
     }
 

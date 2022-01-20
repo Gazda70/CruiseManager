@@ -7,7 +7,7 @@ import io.realm.RealmObject
 import io.realm.annotations.PrimaryKey
 import org.bson.types.ObjectId
 
-open class WeatherInfo: RealmObject{
+open class Weather: RealmObject{
     @PrimaryKey
     var _id: ObjectId = ObjectId()
     var windDirection: Int = 0

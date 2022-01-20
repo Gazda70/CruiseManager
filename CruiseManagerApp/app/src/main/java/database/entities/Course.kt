@@ -4,7 +4,7 @@ import io.realm.RealmObject
 import org.bson.types.ObjectId
 import io.realm.annotations.PrimaryKey
 
-open class CourseInfo : RealmObject {
+open class Course : RealmObject {
     @PrimaryKey
     var _id: ObjectId = ObjectId()
     var compassCourse: Double = 0.0

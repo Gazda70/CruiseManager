@@ -6,7 +6,7 @@ import io.realm.RealmObject
 import io.realm.annotations.PrimaryKey
 import org.bson.types.ObjectId
 
-open class DriveInfo : RealmObject{
+open class Drive : RealmObject{
         @PrimaryKey
         var _id: ObjectId = ObjectId()
         var motorRotations: Double = 0.0

@@ -1,7 +1,6 @@
 package gazda.cruisemanagerapp.cruisesOverwiev.cruisesOverview
 
 import android.annotation.SuppressLint
-import android.content.ContentValues.TAG
 import android.os.Bundle
 import android.util.Log
 import android.view.*
@@ -11,14 +10,14 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import database.entities.CruiseInfo
+import database.customDataTypes.SailorsWatchType
+import database.entities.Cruise
 import gazda.cruisemanagerapp.R
 import gazda.cruisemanagerapp.databinding.CruisesOverviewFragmentBinding
-import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.disposables.CompositeDisposable
 import io.reactivex.rxjava3.disposables.Disposable
-import io.reactivex.rxjava3.schedulers.Schedulers
 import kotlinx.android.synthetic.main.cruises_overwiev_fragment.view.*
+import kotlin.time.ExperimentalTime
 
 
 class CruisesOverviewFragment : Fragment(), ClickListener {
@@ -34,7 +33,7 @@ class CruisesOverviewFragment : Fragment(), ClickListener {
 
     private lateinit var  gestureDetector: GestureDetector
 
-    private var activeCruise: CruiseInfo? = null
+    private var activeCruise: Cruise? = null
 
     //private lateinit var username:String
 
@@ -58,6 +57,7 @@ class CruisesOverviewFragment : Fragment(), ClickListener {
                 { error -> Log.e(TAG, "Unable to get cruise info", error) }))*/
     }
 
+    @ExperimentalTime
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -174,10 +174,17 @@ class CruisesOverviewFragment : Fragment(), ClickListener {
     }
 
 
+    @ExperimentalTime
     @SuppressLint("ClickableViewAccessibility")
     private fun initializeActiveCruisePanel(){
         activeCruise = viewModel.getCurrentCruiseFromDatabase()
         if(activeCruise!=null){
+            val activeCruise = viewModel.getCurrentCruiseFromDatabase()
+            val activeSailorsWatch = viewModel.getCurrentSailorsWatchFromDatabase()
+            //binding.root.active_cruise_time.text=activeCruise.cruiseDuration?.inMinutes.toString()
+            binding.root.active_cruise_name.text=activeCruise.cruiseName
+            binding.root.current_watch_name.text=SailorsWatchType.valueOf(activeSailorsWatch.type.toString()).name
+            binding.root.next_watch_name.text =SailorsWatchType.valueOf(activeSailorsWatch.nextWatchType.toString()).name
             binding.root.active_cruise_info_panel.setOnTouchListener { _, motionEvent ->
                 Log.i("Typ gestu:", motionEvent.toString())
                 gestureDetector.onTouchEvent(motionEvent)

@@ -10,16 +10,16 @@ open class AppUser: RealmObject {
     @PrimaryKey var _id: ObjectId = ObjectId()
     var name: String? = null
     var surname: String? = null
-    var actualCruise:CruiseInfo? = null
-    var futureCruises:RealmList<CruiseInfo>? = RealmList()
-    var pastCruises:RealmList<CruiseInfo>? = RealmList()
+    var actualCruise:Cruise? = null
+    var futureCruises:RealmList<Cruise>? = RealmList()
+    var pastCruises:RealmList<Cruise>? = RealmList()
 
     constructor(
-            name: String,
-            surname: String,
-            actualCruise:CruiseInfo?,
-            futureCruises:RealmList<CruiseInfo>?,
-            pastCruises:RealmList<CruiseInfo>?
+        name: String,
+        surname: String,
+        actualCruise:Cruise?,
+        futureCruises:RealmList<Cruise>?,
+        pastCruises:RealmList<Cruise>?
     ) {
         this.name = name
         this.surname = surname

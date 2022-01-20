@@ -4,8 +4,10 @@ import io.realm.RealmList
 import io.realm.RealmObject
 import io.realm.annotations.PrimaryKey
 import org.bson.types.ObjectId
+import kotlin.time.Duration
+import kotlin.time.ExperimentalTime
 
-open class CruiseInfo : RealmObject {
+open class Cruise : RealmObject {
     @PrimaryKey
     var _id: ObjectId = ObjectId()
     var cruiseTitle: String? = null
@@ -14,20 +16,22 @@ open class CruiseInfo : RealmObject {
     var cruiseCaptain: String? = null
     var cruiseUnit: String? = null
     var cruiseParticipants: RealmList<AppUser>? = null
-    var driveInfo: DriveInfo? = null
-    var courseInfo: CourseInfo? = null
-    var weatherInfo: WeatherInfo? = null
+    var drive: Drive? = null
+    var course: Course? = null
+    var weather: Weather? = null
+    /*@ExperimentalTime
+    var cruiseDuration:Duration? = null*/
 
     constructor(
-            cruiseTitle: String?,
-            cruiseName: String?,
-            cruiseDate: String?,
-            cruiseCaptain: String?,
-            cruiseUnit: String?,
-            cruiseParticipants: RealmList<AppUser>?,
-            driveInfo: DriveInfo?,
-            courseInfo: CourseInfo?,
-            weatherInfo: WeatherInfo?
+        cruiseTitle: String?,
+        cruiseName: String?,
+        cruiseDate: String?,
+        cruiseCaptain: String?,
+        cruiseUnit: String?,
+        cruiseParticipants: RealmList<AppUser>?,
+        drive: Drive?,
+        course: Course?,
+        weather: Weather?
     ){
         this.cruiseTitle = cruiseTitle
         this.cruiseName = cruiseName
@@ -35,9 +39,9 @@ open class CruiseInfo : RealmObject {
         this.cruiseCaptain = cruiseCaptain
         this.cruiseUnit = cruiseUnit
         this.cruiseParticipants = cruiseParticipants
-        this.driveInfo = driveInfo
-        this.courseInfo = courseInfo
-        this.weatherInfo = weatherInfo
+        this.drive = drive
+        this.course = course
+        this.weather = weather
     }
 
     constructor() {} // RealmObject subclasses must provide an empty constructor
