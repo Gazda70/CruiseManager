@@ -9,8 +9,8 @@
         android:layout_width="375dp"
         android:layout_height="156dp"
         android:layout_marginTop="66dp"
-        android:layout_marginEnd="26dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -19,7 +19,7 @@
 
 
             <TextView
-                android:id="@+id/textView15"
+                android:id="@+id/log_entry_timestamp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="34dp"
@@ -49,7 +49,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView16" />
 
             <TextView
-                android:id="@+id/textView18"
+                android:id="@+id/log_entry_creator_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
@@ -65,7 +65,7 @@
                 android:layout_marginTop="48dp"
                 android:layout_marginEnd="9dp"
                 app:layout_constraintEnd_toStartOf="@+id/textView16"
-                app:layout_constraintTop_toBottomOf="@+id/textView15"
+                app:layout_constraintTop_toBottomOf="@+id/log_entry_timestamp"
                 app:srcCompat="@drawable/ic_busola" />
 
             <ImageView
@@ -75,7 +75,7 @@
                 android:layout_marginTop="35dp"
                 android:layout_marginEnd="7dp"
                 app:layout_constraintEnd_toStartOf="@+id/textView19"
-                app:layout_constraintTop_toBottomOf="@+id/textView18"
+                app:layout_constraintTop_toBottomOf="@+id/log_entry_creator_name"
                 app:srcCompat="@drawable/ic_group_133" />
 
             <TextView
@@ -154,7 +154,7 @@
                 android:layout_height="25dp"
                 android:layout_marginTop="9dp"
                 android:layout_marginEnd="19dp"
-                app:layout_constraintEnd_toStartOf="@+id/textView18"
+                app:layout_constraintEnd_toStartOf="@+id/log_entry_creator_name"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/ic_ellipse_17" />
         </androidx.constraintlayout.widget.ConstraintLayout>

@@ -183,8 +183,8 @@ class CruisesOverviewFragment : Fragment(), ClickListener {
             val activeSailorsWatch = viewModel.getCurrentSailorsWatchFromDatabase()
             //binding.root.active_cruise_time.text=activeCruise.cruiseDuration?.inMinutes.toString()
             binding.root.active_cruise_name.text=activeCruise.cruiseName
-            binding.root.current_watch_name.text=SailorsWatchType.valueOf(activeSailorsWatch.type.toString()).name
-            binding.root.next_watch_name.text =SailorsWatchType.valueOf(activeSailorsWatch.nextWatchType.toString()).name
+            binding.root.current_watch_name.text=activeSailorsWatch.type.toString()
+            binding.root.next_watch_name.text =activeSailorsWatch.nextWatchType.toString()
             binding.root.active_cruise_info_panel.setOnTouchListener { _, motionEvent ->
                 Log.i("Typ gestu:", motionEvent.toString())
                 gestureDetector.onTouchEvent(motionEvent)

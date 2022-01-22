@@ -29,7 +29,11 @@
         android:id="@+id/activeCruiseFragment"
         android:name="gazda.cruisemanagerapp.activeCruise.ActiveCruiseFragment"
         android:label="fragment_active_cruise"
-        tools:layout="@layout/fragment_active_cruise" />
+        tools:layout="@layout/fragment_active_cruise" >
+        <action
+            android:id="@+id/action_activeCruiseFragment_to_cruiseLogFragment"
+            app:destination="@id/cruiseLogFragment" />
+    </fragment>
     <fragment
         android:id="@+id/greetingScreen"
         android:name="gazda.cruisemanagerapp.greetingScreen.GreetingScreen"
@@ -72,4 +76,8 @@
             android:id="@+id/action_loginFragment_to_registrationPersonalInfoFragment"
             app:destination="@id/registrationPersonalInfoFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/cruiseLogFragment"
+        android:name="gazda.cruisemanagerapp.cruiseLog.CruiseLogFragment"
+        android:label="CruiseLogFragment" />
 </navigation>

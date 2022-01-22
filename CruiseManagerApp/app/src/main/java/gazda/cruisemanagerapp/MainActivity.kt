@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var navController: NavController
     private lateinit var app: App
-    private val APP_ID : String = "cruisemanagement-zqytc"
+    private val APP_ID : String = "cruisemanagerapp-qivzb"
     private lateinit var credentials: Credentials
 
     override fun onStart() {
@@ -56,7 +56,8 @@ class MainActivity : AppCompatActivity() {
                 Log.v("QUICKSTART", "Successfully authenticated anonymously.")
                 val user: User? = app.currentUser()
 
-                val partitionValue: Long = 123L
+                //val partitionValue: Long = 123L
+                val partitionValue = "_partition"
                 val config = SyncConfiguration.Builder(user, partitionValue)
                         .build()
                 RealmContainer.myRealm = Realm.getInstance(config)
